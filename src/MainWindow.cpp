@@ -27,7 +27,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btnConnect_clicked()
 {
-	m_manager->get(QNetworkRequest(QUrl("https://api.exchangerate.host/latest")));
+	m_manager->get(QNetworkRequest(QUrl::fromUserInput(ui->editUrl->text())));
 }
 
 void MainWindow::replyFinished(QNetworkReply *reply)
